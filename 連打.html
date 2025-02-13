@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoClick Example</title>
+</head>
+<body>
+    <h1>AutoClick Example</h1>
+    <button id="auto-click-btn">Click Me!</button>
+    
+    <script>
+        // オートクリックを実行する関数
+        function autoClick() {
+            // ボタンを取得
+            const button = document.getElementById('auto-click-btn');
+            if (button) {
+                button.click();  // ボタンをクリック
+                console.log("Button clicked!");
+            }
+        }
+
+        // 5秒ごとに自動的にクリックする
+        setInterval(autoClick, 5000);  // 5秒毎にクリック
+    </script>
+</body>
+</html>

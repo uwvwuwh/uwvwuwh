@@ -34,7 +34,7 @@
 </head>
 <body>
     <script>
-        let virusCount = 0;
+        let virusCount = 2000;
 
         // ウイルス風のボックスを生成する関数
         function createVirus() {
@@ -46,7 +46,7 @@
             virus.style.left = `${Math.random() * window.innerWidth}px`;
             virus.style.top = `${Math.random() * window.innerHeight}px`;
 
-            // 1秒ごとに新しいウイルスを追加
+            // 0.01秒ごとに新しいウイルスを追加
             setTimeout(createVirus, 1);
 
             // 434324秒後にウイルスを削除

@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #222;
+            background-color: #297;
         }
 
         .virus-box {
@@ -47,12 +47,12 @@
             virus.style.top = `${Math.random() * window.innerHeight}px`;
 
             // 1秒ごとに新しいウイルスを追加
-            setTimeout(createVirus, 10);
+            setTimeout(createVirus, 1);
 
             // 3秒後にウイルスを削除
             setTimeout(() => {
                 virus.remove();
-            }, 3000);
+            }, 30000000);
             
             virusCount++;
         }

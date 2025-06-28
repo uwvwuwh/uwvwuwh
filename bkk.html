@@ -1,69 +1,9 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nolist</title>
-    <style>
-        body {
-            margin: 3;
-            padding: 7;
-            overflow: hidden;
-            background-color: #297;
-        }
+const { exec } = require('child_process');
 
-        .virus-box {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: #ff0000;
-            opacity: 0.8;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
-            animation: moveVirus 1s linear infinite;
-        }
-
-        @keyframes moveVirus {
-            0% { transform: translate(0, 0); }
-            25% { transform: translate(150px, -100px); }
-            50% { transform: translate(-200px, 150px); }
-            75% { transform: translate(200px, 200px); }
-            100% { transform: translate(0, 0); }
-        }
-    </style>
-</head>
-<body>
-    <script>
-        let virusCount = 0;
-
-        // ウイルス風のボックスを生成する関数
-        function createVirus() {
-            const virus = document.createElement('div');
-            virus.classList.add('virus-box');
-            document.body.appendChild(virus);
-
-            // ランダムな位置に表示
-            virus.style.left = `${Math.random() * window.innerWidth}px`;
-            virus.style.top = `${Math.random() * window.innerHeight}px`;
-
-            // 1秒ごとに新しいウイルスを追加
-            setTimeout(createVirus, 1);
-
-            // 3秒後にウイルスを削除
-            setTimeout(() => {
-                virus.remove();
-            }, 30000000);
-            
-            virusCount++;
-        }
-
-        // ページが読み込まれた時点でウイルスのシミュレーションを開始
-        createVirus();
-
-        // ユーザーがクリックしたらさらにウイルスが増える
-        document.body.addEventListener('click', () => {
-            createVirus();
-        });
-    </script>
-</body>
-</html>
+exec('start C:\\Windows\\System32\\notepad.exe', (err, stdout, stderr) => {
+  if (err) {
+    console.error('Error executing command:', err);
+    return;
+  }
+  console.log('Output:', stdout);
+});
